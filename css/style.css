@@ -5,3 +5,27 @@
 .blueGrey{
     color: #6a6c85;
 }
+body, html {
+    height: 100%;
+}
+.bg {
+    /* The image used */
+    background-image: url("https://mdbootstrap.com/img/Photos/Horizontal/Nature/full page/img(20).jpg");
+
+    /* Full height */
+    height: 100%;
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.userAvatar{
+    width: 40px;
+    height: 40px;
+}
+.redBg{
+    background-color: #ff0000;
+    color: #ffffff;
+    cursor: pointer;
+}

@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:v-slot="http://www.w3.org/1999/XSL/Transform">
+<head>
+    <title>Open Work</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@mdi/font@5.x/css/materialdesignicons.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
+    <!--mdb-->
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.0/css/mdb.min.css" rel="stylesheet">
+    <!--mdb-->
+</head>
+<body>
+<div id="app">
+    <v-app id="inspire">
+        <v-app id="inspire">
+            <v-navigation-drawer
+                    v-model="drawer"
+                    app
+                    clipped
+            >
+                <div class="v-list v-sheet v-sheet--tile theme--light v-list--dense">
+                    <div tabindex="0" class="v-list-item v-list-item--link theme--light">
+                        <div class="v-list-item__action"><i aria-hidden="true"
+                                                            class="v-icon notranslate mdi mdi-account-group theme--light"></i>
+                        </div>
+                        <div class="v-list-item__content">
+                            <div class="v-list-item__title">
+                                Пользователи
+                            </div>
+                        </div>
+                    </div>
+                    <div tabindex="0" class="v-list-item v-list-item--link theme--light">
+                        <div class="v-list-item__action"><i aria-hidden="true"
+                                                            class="v-icon notranslate mdi mdi-office-building theme--light"></i>
+                        </div>
+                        <div class="v-list-item__content">
+                            <div class="v-list-item__title">
+                                Компании
+                            </div>
+                        </div>
+                    </div>
+                    <div tabindex="0" class="v-list-item v-list-item--link theme--light">
+                        <div class="v-list-item__action"><i aria-hidden="true"
+                                                            class="v-icon notranslate mdi mdi-server theme--light"></i>
+                        </div>
+                        <div class="v-list-item__content">
+                            <div class="v-list-item__title">
+                                Прогресс
+                            </div>
+                        </div>
+                    </div>
+                    <div class="v-list-group">
+                        <div tabindex="0" aria-expanded="false" role="button"
+                             class="v-list-group__header v-list-item v-list-item--link theme--light">
+                            <div class="v-list-item__icon v-list-group__header__prepend-icon"><i aria-hidden="true"
+                                                                                                 class="v-icon notranslate mdi mdi-file-video-outline theme--light"></i>
+                            </div>
+                            <div class="v-list-item__content">
+                                <div class="v-list-item__title">
+                                    Контент
+                                </div>
+                            </div>
+                        </div>
+                        <div class="v-list-group__items" style="display: none;">
+                            <div class="v-list-item v-list-item--link theme--light">class</div>
+                            <div tabindex="0" class="v-list-item v-list-item--link theme--light">
+                                <div class="v-list-item__action">
+                                    <i aria-hidden="true" class="v-icon notranslate mdi mdi-plus theme--light"></i>
+                                </div>
+                                <div class="v-list-item__content">
+                                    <div class="v-list-item__title">
+                                        Классные комнаты
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="v-list-group">
+                        <div tabindex="0" aria-expanded="false" role="button"
+                             class="v-list-group__header v-list-item v-list-item--link theme--light">
+                            <div class="v-list-item__icon v-list-group__header__prepend-icon"><i aria-hidden="true"
+                                                                                                 class="v-icon notranslate mdi mdi-chevron-down theme--light"></i>
+                            </div>
+                            <div class="v-list-item__content">
+                                <div class="v-list-item__title">
+                                    История
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="v-list-group">
+                            <div tabindex="0" aria-expanded="false"
+                                 class="v-list-group__header v-list-item theme--light">
+                                <div class="v-list-item__content">
+                                    <div class="v-list-item__title" disabled="">
+                                        Класс
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="v-list-group__items" style="display: none;">
+                            <div tabindex="0" class="v-list-item v-list-item--link theme--light"><!---->
+                                <div class="v-list-item__content">
+                                    <div class="v-list-item__title">
+                                        Lorem.
+                                    </div>
+                                </div>
+                            </div>
+                            <div tabindex="0" class="v-list-item v-list-item--link theme--light"><!---->
+                                <div class="v-list-item__content">
+                                    <div class="v-list-item__title">
+                                        Lorem ipsum.
+                                    </div>
+                                </div>
+                            </div>
+                            <div tabindex="0" class="v-list-item v-list-item--link theme--light"><!---->
+                                <div class="v-list-item__content">
+                                    <div class="v-list-item__title">
+                                        Lorem ipsum dolor.
+                                    </div>
+                                </div>
+                            </div>
+                            <div tabindex="0" class="v-list-item v-list-item--link theme--light"><!---->
+                                <div class="v-list-item__content">
+                                    <div class="v-list-item__title">
+                                        Lorem ipsum dolor sit.
+                                    </div>
+                                </div>
+                            </div>
+                            <div tabindex="0" class="v-list-item v-list-item--link theme--light"><!---->
+                                <div class="v-list-item__content">
+                                    <div class="v-list-item__title">
+                                        Lorem ipsum dolor sit amet.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div tabindex="0" class="v-list-item v-list-item--link theme--light">
+                        <div class="v-list-item__action"><i aria-hidden="true"
+                                                            class="v-icon notranslate mdi mdi-check-box-outline theme--light"></i>
+                        </div>
+                        <div class="v-list-item__content">
+                            <div class="v-list-item__title">
+                                Проверка заданий
+                            </div>
+                        </div>
+                    </div>
+                    <div tabindex="0" class="v-list-item v-list-item--link theme--light">
+                        <div class="v-list-item__action"><i aria-hidden="true"
+                                                            class="v-icon notranslate mdi mdi-nodejs theme--light"></i>
+                        </div>
+                        <div class="v-list-item__content">
+                            <div class="v-list-item__title">
+                                Node Js
+                            </div>
+                        </div>
+                    </div>
+                    <div tabindex="0" class="v-list-item v-list-item--link theme--light">
+                        <div class="v-list-item__action"><i aria-hidden="true"
+                                                            class="v-icon notranslate mdi mdi-heart-pulse theme--light"></i>
+                        </div>
+                        <div class="v-list-item__content">
+                            <div class="v-list-item__title">
+                                Обновления
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="v-list-group">
+                        <div tabindex="0" aria-expanded="false"
+                             class="v-list-group__header v-list-item theme--light">
+                            <div class="v-list-item__content">
+                                <div class="v-list-item__title" disabled="">
+                                    Оповещения
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div tabindex="0" class="v-list-item v-list-item--link theme--light">
+                        <div class="v-list-item__action"><i aria-hidden="true"
+                                                            class="v-icon notranslate mdi mdi-comment theme--light"></i>
+                        </div>
+                        <div class="v-list-item__content">
+                            <div class="v-list-item__title">
+                                Оповещения
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="v-list-group">
+                        <div tabindex="0" aria-expanded="false"
+                             class="v-list-group__header v-list-item theme--light">
+                            <div class="v-list-item__content">
+                                <div class="v-list-item__title" disabled="">
+                                    Аккаунт
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div tabindex="0" class="v-list-item v-list-item--link theme--light">
+                        <div class="v-list-item__action"><i aria-hidden="true"
+                                                            class="v-icon notranslate mdi mdi-cog theme--light"></i>
+                        </div>
+                        <div class="v-list-item__content">
+                            <div class="v-list-item__title">
+                                Настройки
+                            </div>
+                        </div>
+                    </div>
+                    <div tabindex="0" class="v-list-item v-list-item--link theme--light">
+                        <div class="v-list-item__action"><i aria-hidden="true"
+                                                            class="v-icon notranslate mdi mdi-credit-card theme--light"></i>
+                        </div>
+                        <div class="v-list-item__content">
+                            <div class="v-list-item__title">
+                                Платежи
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </v-navigation-drawer>
+
+            <v-app-bar
+                    app
+                    clipped-left
+            >
+                <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
+                <v-toolbar-title>ATMOnline</v-toolbar-title>
+                <div class="spacer"></div>
+
+
+                <v-avatar color="indigo" v-on="on"
+                          v-bind="attrs">
+                    <v-icon dark>mdi-account-circle</v-icon>
+                </v-avatar>
+                <div class="ml-2">
+                    <a href="#">
+                        pavel petrov
+                    </a>
+                </div>
+
+
+                <v-menu offset-y>
+                    <template v-slot:activator="{ on, attrs }">
+                        <button type="button"
+                                class="v-btn v-btn--flat v-btn--icon v-btn--round theme--dark v-size--large" v-on="on"
+                                v-bind="attrs">
+                    <span class="v-btn__content">
+                        <div class="v-avatar" item="" style="height: 32px; min-width: 32px; width: 32px;">
+                                <v-avatar color="indigo">
+                                    <v-icon dark>mdi-account-circle</v-icon>
+                                </v-avatar>
+                        </div>
+                    </span>
+                        </button>
+                        <!--<v-icon>mdi-dots-vertical</v-icon>-->
+                    </template>
+                    <v-list>
+                        <v-list-item
+                                v-for="(item, index) in items"
+                                :key="index"
+                                @click=""
+
+                        >
+                            <v-list-item-title>{{ item.title }}</v-list-item-title>
+                        </v-list-item>
+                    </v-list>
+                </v-menu>
+            </v-app-bar>
+            <v-content>
+                <div class="container float-left">
+                    <div class="mt-4">
+                        <div class="mb-4">
+                            <!-- Default input -->
+                            <label for="email_1">E-mail</label>
+                            <input type="text" id="email_1" class="form-control">
+                        </div>
+                        <div class="mb-4">
+                            <label for="password_1">Пароль</label>
+                            <input type="password" id="password_1" class="form-control">
+                        </div>
+                        <div class="mb-4">
+                            <!-- Default input -->
+                            <label for="phoneNumber_1">Телефон</label>
+                            <input type="number" id="phoneNumber_1" class="form-control">
+                        </div>
+                        <div class="mb-4">
+                            <!-- Default input -->
+                            <label for="location_1">Местоположение</label>
+                            <input type="text" id="location_1" class="form-control">
+                        </div>
+                        <div class="mb-4">
+                            <v-menu
+                                    ref="menu"
+                                    v-model="menu"
+                                    :close-on-content-click="false"
+                                    :return-value.sync="date"
+                                    transition="scale-transition"
+                                    offset-y
+                                    min-width="290px"
+                            >
+                                <template v-slot:activator="{ on, attrs }">
+                                    <v-text-field
+                                            v-model="date"
+                                            label="Дата рождения"
+                                            readonly
+                                            v-bind="attrs"
+                                            v-on="on"
+                                    ></v-text-field>
+                                </template>
+                                <v-date-picker v-model="date" no-title scrollable>
+                                    <v-spacer></v-spacer>
+                                    <v-btn text color="primary" @click="menu = false">Отменить</v-btn>
+                                    <v-btn text color="primary" @click="$refs.menu.save(date)">OK</v-btn>
+                                </v-date-picker>
+                            </v-menu>
+                        </div>
+                        <div class="mb-4">
+                            <label>Пол</label>
+                            <select class="browser-default custom-select">
+                                <option value="1">Мужской</option>
+                                <option value="2">Женский</option>
+                            </select>
+                        </div>
+                        <div class="mb-4">
+                            <label>Роли</label>
+                            <div class="chips"></div>
+                            <div class="chips chips-initial"></div>
+                            <div class="chips chips-placeholder"></div>
+                            <div class="chips chips-autocomplete"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container-fluid"></div>
+            </v-content>
+
+            <v-footer app>
+                <span>&copy; 2020</span>
+            </v-footer>
+        </v-app>
+    </v-app>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
+<!--mdb-->
+<!-- JQuery -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<!-- Bootstrap tooltips -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+<!-- Bootstrap core JavaScript -->
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+<!-- MDB core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.0/js/mdb.min.js"></script>
+<!--mdb-->
+<script>
+    new Vue({
+        el: '#app',
+        vuetify: new Vuetify(),
+        props: {
+            source: String,
+        },
+
+        data: () => ({
+            drawer: null,
+            items: [
+                {title: 'Профиль'},
+                {title: 'Выход'},
+            ],
+            date: new Date().toISOString().substr(0, 10),
+            menu: false,
+            modal: false,
+            menu2: false,
+        }),
+
+        created() {
+            this.$vuetify.theme.light = true
+        },
+    });
+    $('.chips-initial').form_chip('data');
+    var chip = {
+        tag: 'chip content',
+        image: '', //optional
+        id: 1, //optional
+    };
+</script>
+</body>
+</html>
