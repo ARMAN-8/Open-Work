@@ -29,3 +29,9 @@ body, html {
     color: #ffffff;
     cursor: pointer;
 }
+.ownBtnBorR{
+    border-radius: 5px;
+}
+.secondAccordionBG{
+    background-color: #eeffed;
+}

@@ -16,7 +16,10 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
     <!-- Material Design Bootstrap -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.0/css/mdb.min.css" rel="stylesheet">
+    <!--wysiwyg editor-->
+    <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
     <!--mdb-->
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 <div id="app">
@@ -65,11 +68,27 @@
                                                                                                  class="v-icon notranslate mdi mdi-file-video-outline theme--light"></i>
                             </div>
                             <div class="v-list-item__content">
-                                <div class="v-list-item__title">
+                                <div class="v-list-item__title" data-toggle="collapse" href="#sideNavCollapse1"
+                                     aria-expanded="false" aria-controls="sideNavCollapse1">
                                     Контент
+                                    <i class="fas fa-angle-down float-right rotate"></i>
                                 </div>
                             </div>
                         </div>
+                        <!-- Collapsible element -->
+                        <div class="collapse" id="sideNavCollapse1">
+                            <ul class="ml-5 text-black-50">
+                                <li class="m-3 w-100"><a href="#" class="text-black-50">Видео</a></li>
+                                <li class="m-3"><a href="#" class="text-black-50">Упражнения</a></li>
+                                <li class="m-3"><a href="#" class="text-black-50">Письменные <br> Упражнения</a></li>
+                                <li class="m-3"><a href="#" class="text-black-50">ЧВД упражнения</a></li>
+                                <li class="m-3"><a href="#" class="text-black-50">Курсы</a></li>
+                                <li class="m-3"><a href="#" class="text-black-50">Куросовые статьи</a></li>
+                                <li class="m-3"><a href="#" class="text-black-50">Страницы</a></li>
+                                <li class="m-3"><a href="#" class="text-black-50">Глоссарии</a></li>
+                            </ul>
+                        </div>
+                        <!-- / Collapsible element -->
                         <div class="v-list-group__items" style="display: none;">
                             <div class="v-list-item v-list-item--link theme--light">class</div>
                             <div tabindex="0" class="v-list-item v-list-item--link theme--light">
@@ -88,7 +107,7 @@
                         <div tabindex="0" aria-expanded="false" role="button"
                              class="v-list-group__header v-list-item v-list-item--link theme--light">
                             <div class="v-list-item__icon v-list-group__header__prepend-icon"><i aria-hidden="true"
-                                                                                                 class="v-icon notranslate mdi mdi-chevron-down theme--light"></i>
+                                                                                                 class="v-icon notranslate mdi mdi-history theme--light"></i>
                             </div>
                             <div class="v-list-item__content">
                                 <div class="v-list-item__title">
@@ -242,47 +261,993 @@
                 <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
                 <v-toolbar-title>ATMOnline</v-toolbar-title>
                 <div class="spacer"></div>
+                <div>
+                    <h3 class="text-black-50">
+                        Lorem ipsum dolor.
+                    </h3>
+                </div>
+                <div class="spacer"></div>
+                <div class="mr-5">
 
-
-                <v-avatar color="indigo" v-on="on"
-                          v-bind="attrs">
-                    <v-icon dark>mdi-account-circle</v-icon>
-                </v-avatar>
-                <div class="ml-2">
-                    <a href="#">
-                        pavel petrov
+                    <a href="#" class="font-weight-bolder green-text">
+                        <i class="far fa-clock"></i>
+                        2684 дня
                     </a>
                 </div>
+                <a class="ml-5" data-toggle="dropdown"
+                   aria-haspopup="true" aria-expanded="false">
+                    <v-avatar color="indigo" v-on="on"
+                              v-bind="attrs">
+                        <v-icon dark>mdi-account-circle</v-icon>
+                    </v-avatar>
+                    pavel petrov
+                    <i class="fas fa-angle-down ml-2 text-black-50"></i>
+                </a>
 
-
-                <v-menu offset-y>
-                    <template v-slot:activator="{ on, attrs }">
-                        <button type="button"
-                                class="v-btn v-btn--flat v-btn--icon v-btn--round theme--dark v-size--large" v-on="on"
-                                v-bind="attrs">
-                    <span class="v-btn__content">
-                        <div class="v-avatar" item="" style="height: 32px; min-width: 32px; width: 32px;">
-                                <v-avatar color="indigo">
-                                    <v-icon dark>mdi-account-circle</v-icon>
-                                </v-avatar>
-                        </div>
-                    </span>
-                        </button>
-                        <!--<v-icon>mdi-dots-vertical</v-icon>-->
-                    </template>
-                    <v-list>
-                        <v-list-item
-                                v-for="(item, index) in items"
-                                :key="index"
-                                @click=""
-
-                        >
-                            <v-list-item-title>{{ item.title }}</v-list-item-title>
-                        </v-list-item>
-                    </v-list>
-                </v-menu>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#modal_profile_1"><i
+                            class="fas fa-user"></i> Профиль</a>
+                    <a class="dropdown-item" href="#"><i class="fas fa-sign-out-alt"></i> Выход</a>
+                </div>
             </v-app-bar>
             <v-content>
+                <!-- Modal---modal_profile_1-----modal_profile_1_label -->
+                <div class="modal fade" id="modal_profile_1" tabindex="-1" role="dialog"
+                     aria-labelledby="modal_profile_1_label"
+                     aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="modal_profile_1_label">Профиль</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="mb-4">
+                                    <div>
+                                        <v-app id="inspire">
+                                            <!--<img src="https://smartlanding.biz/wp-content/uploads/2019/09/stilizaciya-input-s-type-file.png"
+                                                 alt="" class="img-fluid">-->
+                                            <v-file-input
+                                                    label="Нажмите что бы добавить аватар"
+                                                    filled
+                                                    prepend-icon="mdi-camera">
+                                            </v-file-input>
+                                        </v-app>
+                                    </div>
+                                </div>
+                                <hr/>
+                                <div class="mb-4">
+                                    <!-- Default input Name -->
+                                    <label for="profileName_1">Имя:</label>
+                                    <input type="text" id="profileName_1" class="form-control">
+                                </div>
+                                <div class="mb-4">
+                                    <!-- Default input SurName -->
+                                    <label for="profileSurname_1">Фамилия:</label>
+                                    <input type="text" id="profileSurname_1" class="form-control">
+                                </div>
+                                <div class="mb-4">
+                                    <!-- Default input E-Mail -->
+                                    <label for="profileE-Mail_1">E-Mail:</label>
+                                    <input type="text" id="profileE-Mail_1" class="form-control">
+                                </div>
+                                <div class="mb-4">
+                                    <!-- Default input PhoneNumber -->
+                                    <label for="profilePhoneNumber_1">Телефон:</label>
+                                    <input type="number" id="profilePhoneNumber_1" class="form-control">
+                                </div>
+                                <div class="mb-4">
+                                    <!-- Default input Password -->
+                                    <label for="profilePassword_1">Пароль</label>
+                                    <input type="password" id="profilePassword_1" class="form-control">
+                                </div>
+                                <div class="mb-4">
+                                    <!-- Default input Location -->
+                                    <label for="profileLocation_1">Местоположение:</label>
+                                    <input type="number" id="profileLocation_1" class="form-control">
+                                </div>
+                                <div class="mb-4">
+                                    <select class="browser-default custom-select">
+                                        <option value="1">Мужской</option>
+                                        <option value="2">Женский</option>
+                                    </select>
+                                </div>
+                                <div class="mb-4">
+                                    <!--Maybe-Wrong-Code-->
+                                    <v-menu
+                                            ref="secondDatePickerMenu"
+                                            v-model="secondDatePickerMenu"
+                                            :close-on-content-click="false"
+                                            :return-value.sync="secondDatePickerDate"
+                                            transition="scale-transition"
+                                            offset-y
+                                            min-width="290px"
+                                    >
+                                        <template v-slot:activator="{ on, attrs }">
+                                            <v-text-field
+                                                    v-model="secondDatePickerDate"
+                                                    label="Дата рождения"
+                                                    readonly
+                                                    v-bind="attrs"
+                                                    v-on="on"
+                                            ></v-text-field>
+                                        </template>
+                                        <v-date-picker v-model="date" no-title scrollable>
+                                            <v-spacer></v-spacer>
+                                            <v-btn text color="primary" @click="secondDatePickerMenu = false">Отменить
+                                            </v-btn>
+                                            <v-btn text color="primary"
+                                                   @click="$refs.secondDatePickerMenu.save(secondDatePickerDate)">OK
+                                            </v-btn>
+                                        </v-date-picker>
+                                    </v-menu>
+                                    <!--/Maybe-Wrong-Code-->
+                                </div>
+                                <div class="mb-4">
+                                    <div class="custom-control custom-checkbox float-left">
+                                        <input type="checkbox" class="custom-control-input" id="modalCheckbox_1">
+                                        <label class="custom-control-label" for="modalCheckbox_1">Получать
+                                            e-mail</label>
+                                    </div>
+                                    <div class="custom-control custom-checkbox float-right">
+                                        <input type="checkbox" class="custom-control-input" id="modalCheckbox_2">
+                                        <label class="custom-control-label" for="modalCheckbox_2">Получать sms</label>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-danger ownBtnBorR" data-dismiss="modal">Закрыть
+                                </button>
+                                <button type="button" class="btn btn-success ownBtnBorR">Сохранить</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container-fluid pt-5">
+                    <div class="mt-5 w-50">
+                        <div class="mb-4">
+                            <h3>Редактирование глоссария</h3>
+                        </div>
+                        <div class="mb-4">
+                            <!-- Default input-glossaryName_1 -->
+                            <label for="glossaryName_1">Имя</label>
+                            <input type="text" id="glossaryName_1" class="form-control">
+                        </div>
+                        <div class="mb-4">
+                            <!-- Default formControl-glossaryDescription_1 -->
+                            <div class="form-group">
+                                <label for="glossaryDescription_1">Описание</label>
+                                <textarea class="form-control" id="glossaryDescription_1" rows="3"></textarea>
+                            </div>
+                        </div>
+                        <div class="mb-4">
+                            <button class="btn btn-success ownBtnBorR">
+                                Добавить
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-6">
+                            <div class="mt-4">
+                                <div class="mb-4">
+                                    <div class="card w-50 h-50">
+                                        <img class="card-img-top img-fluid z-depth-2"
+                                             src="https://mdbootstrap.com/img/Photos/Others/photo6.jpg"
+                                             alt="Card image cap">
+                                        <div class="card-footer">
+                                            <v-file-input
+                                                    label="Загрузить обложку"
+                                                    filled
+                                                    prepend-icon="mdi-camera"
+                                            ></v-file-input>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-4">
+                                    <!-- Default input-CreateCourseTitle -->
+                                    <label for="createCourseTitle_1">Название</label>
+                                    <input type="text" id="createCourseTitle_1" class="form-control">
+                                </div>
+                                <div class="mb-4">
+                                    <!-- Default formControl-CreateCourseDescription -->
+                                    <div class="form-group">
+                                        <label for="createCourseDescription_1">Описание</label>
+                                        <textarea class="form-control" id="createCourseDescription_1"
+                                                  rows="3"></textarea>
+                                    </div>
+                                </div>
+                                <div class="mb-4">
+                                    <label>Авторские права</label>
+                                    <div id="editor">
+                                        <p>Hello World!</p>
+                                        <p>Lorem ipsum <b>dolor</b> sit.</p>
+                                        <p><br></p>
+                                    </div>
+                                </div>
+                                <div class="mb-4">
+                                    <label>Курсы, которые нужно завершить, прежде чем начинать текущий</label>
+                                    <select class="browser-default custom-select">
+                                        <option selected>Ничего не выбрано</option>
+                                        <option value="1">One</option>
+                                        <option value="2">Two</option>
+                                        <option value="3">Three</option>
+                                    </select>
+                                </div>
+                                <div class="mb-4">
+                                    <div class="custom-control custom-checkbox custom-control-inline w-100">
+                                        <input type="checkbox" class="custom-control-input" id="physicalCourse_1">
+                                        <label class="custom-control-label" for="physicalCourse_1">Физический
+                                            курс</label>
+                                    </div>
+                                    <div class="custom-control custom-checkbox custom-control-inline w-100">
+                                        <input type="checkbox" class="custom-control-input" id="published_1">
+                                        <label class="custom-control-label" for="published_1">Опубликован</label>
+                                    </div>
+                                    <div class="custom-control custom-checkbox custom-control-inline w-100">
+                                        <input type="checkbox" class="custom-control-input" id="availableToAdd_1">
+                                        <label class="custom-control-label" for="availableToAdd_1">Достпуен для
+                                            добавления</label>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="mb-4">
+                                    <div>
+                                        <!--<a class="btn  ownBtnBorR p-2">
+                                            <i class="fas fa-file-pdf red-text fa-2x"></i>
+                                        </a>-->
+                                        <a class="btn btn-success ownBtnBorR p-2">
+                                            <i class="fas fa-cloud-download-alt"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="mb-4 text-center">
+                                    <a href="#" class="font-weight-normal black-text">Редактировать</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6">
+                            <div class="mt-4">
+                                <div class="mb-4">
+
+
+                                    <!--Accordion wrapper-->
+                                    <div class="accordion md-accordion accordion-1" id="accordionEx23" role="tablist">
+                                        <div class="card">
+                                            <div class="card-header blue lighten-3 z-depth-1" role="tab" id="heading96">
+                                                <div class="">
+                                                    <a class="text-uppercase h5 white-text font-weight-bold" data-toggle="collapse"
+                                                       href="#collapse96" aria-expanded="true"
+                                                       aria-controls="collapse96">
+                                                        Раздел 1 <i class="fas fa-angle-up"></i>
+                                                    </a>
+                                                    <a class="float-right" href="#" data-toggle="dropdown"
+                                                    aria-haspopup="true" aria-expanded="false"><i class="fas fa-ellipsis-v white-text"></i></a>
+                                                    <div class="dropdown-menu">
+                                                        <a class="dropdown-item" href="#">Удалить шаг</a>
+                                                        <a class="dropdown-item" href="#">Редактировать</a>
+                                                        <a class="dropdown-item" href="#">Можно пропустить</a>
+                                                        <a class="dropdown-item" href="#">Необязательный шаг</a>
+                                                    </div>
+                                                </div>
+                                                <p class="white-text">Описание и термины</p>
+
+
+                                            </div>
+                                            <div id="collapse96" class="collapse show" role="tabpanel"
+                                                 aria-labelledby="heading96"
+                                                 data-parent="#accordionEx23">
+                                                <div class="card-body">
+                                                    <div class="row">
+                                                        <div class="col-lg-12 col-md-12 col-sm-12">
+                                                            <div class="card mb-2 secondAccordionBG">
+                                                                <div class="card-body">
+                                                                    <div class="mb-4">
+                                                                        1. Видео
+                                                                        <span class="badge badge-dark">Нельзя пропустить</span>
+                                                                        <span class="badge badge-dark">Обязателный шаг</span>
+                                                                        <a class="float-right" href="#" data-toggle="dropdown"
+                                                                           aria-haspopup="true" aria-expanded="false"><i class="fas fa-ellipsis-v black-text"></i></a>
+                                                                        <div class="dropdown-menu dropdown-menu-sm">
+                                                                            <a class="dropdown-item" href="#">Удалить шаг</a>
+                                                                            <a class="dropdown-item" href="#">Редактировать</a>
+                                                                            <a class="dropdown-item" href="#">Нельзя пропустить</a>
+                                                                            <a class="dropdown-item" href="#">Необязательный шаг</a>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="">
+                                                                        <a href="#" class="h6 blue-text">
+                                                                            Подпродукты
+                                                                        </a>
+                                                                        <p class="text-black-50">Видео демонстрирует принципы создания подпродуктов</p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="card mb-2 secondAccordionBG">
+                                                                <div class="card-body">
+                                                                    <div class="mb-4">
+                                                                        2. Статья
+                                                                        <span class="badge badge-dark">Нельзя пропустить</span>
+                                                                        <span class="badge badge-dark">Обязателный шаг</span>
+                                                                        <a class="float-right" href="#" data-toggle="dropdown"
+                                                                           aria-haspopup="true" aria-expanded="false"><i class="fas fa-ellipsis-v black-text"></i></a>
+                                                                        <div class="dropdown-menu dropdown-menu-sm">
+                                                                            <a class="dropdown-item" href="#">Удалить шаг</a>
+                                                                            <a class="dropdown-item" href="#">Редактировать</a>
+                                                                            <a class="dropdown-item" href="#">Нельзя пропустить</a>
+                                                                            <a class="dropdown-item" href="#">Необязательный шаг</a>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="">
+                                                                        <a href="#" class="h6 blue-text">
+                                                                            Деньги
+                                                                        </a>
+                                                                        <p class="text-black-50">Деньги, их определения</p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="card mb-2 secondAccordionBG">
+                                                                <div class="card-body">
+                                                                    <div class="mb-4">
+                                                                        3. Письменное упражнение
+                                                                        <span class="badge badge-dark">Можно пропустить</span>
+                                                                        <span class="badge badge-dark">Обязателный шаг</span>
+                                                                        <a class="float-right" href="#" data-toggle="dropdown"
+                                                                           aria-haspopup="true" aria-expanded="false"><i class="fas fa-ellipsis-v black-text"></i></a>
+                                                                        <div class="dropdown-menu dropdown-menu-sm">
+                                                                            <a class="dropdown-item" href="#">Удалить шаг</a>
+                                                                            <a class="dropdown-item" href="#">Редактировать</a>
+                                                                            <a class="dropdown-item" href="#">Можно пропустить</a>
+                                                                            <a class="dropdown-item" href="#">Необязательный шаг</a>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="">
+                                                                        <a href="#" class="h6 blue-text">
+                                                                            Экзамен
+                                                                        </a>
+                                                                        <p class="text-black-50"></p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card">
+                                            <div class="card-header blue lighten-3 z-depth-1" role="tab" id="heading97">
+                                                <h5 class="text-uppercase mb-0 py-1">
+                                                    <a class="collapsed font-weight-bold white-text"
+                                                       data-toggle="collapse" href="#collapse97"
+                                                       aria-expanded="false" aria-controls="collapse97">
+                                                        I am the second title of accordion
+                                                    </a>
+                                                </h5>
+                                            </div>
+                                            <div id="collapse97" class="collapse" role="tabpanel"
+                                                 aria-labelledby="heading97"
+                                                 data-parent="#accordionEx23">
+                                                <div class="card-body">
+                                                    <div class="row my-4">
+                                                        <div class="col-md-8">
+                                                            <h2 class="font-weight-bold mb-3 black-text">Hi! I am the
+                                                                second one.</h2>
+                                                            <p class="">Lorem ipsum dolor sit amet, consectetur
+                                                                adipisicing elit, sed do eiusmod tempor
+                                                                incididunt ut labore et dolore magna aliqua. Ut enim ad
+                                                                minim veniam, quis nostrud exercitation
+                                                                ullamco laboris</p>
+                                                            <p class="mb-0">Duis aute irure dolor in reprehenderit in
+                                                                voluptate velit esse cillum dolore eu
+                                                                fugiat nulla pariatur.</p>
+                                                        </div>
+                                                        <div class="col-md-4 mt-3 pt-2">
+                                                            <div class="view z-depth-1">
+                                                                <img src="https://mdbootstrap.com/img/Photos/Others/nature.jpeg"
+                                                                     alt="" class="img-fluid">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card">
+                                            <div class="card-header blue lighten-3 z-depth-1" role="tab" id="heading98">
+                                                <h5 class="text-uppercase mb-0 py-1">
+                                                    <a class="collapsed font-weight-bold white-text"
+                                                       data-toggle="collapse" href="#collapse98"
+                                                       aria-expanded="false" aria-controls="collapse98">
+                                                        I am the third title of accordion
+                                                    </a>
+                                                </h5>
+                                            </div>
+                                            <div id="collapse98" class="collapse" role="tabpanel"
+                                                 aria-labelledby="heading98"
+                                                 data-parent="#accordionEx23">
+                                                <div class="card-body">
+                                                    <div class="row my-4">
+                                                        <div class="col-md-8">
+                                                            <h2 class="font-weight-bold mb-3 black-text">Hi! I am the
+                                                                third one.</h2>
+                                                            <p class="">Lorem ipsum dolor sit amet, consectetur
+                                                                adipisicing elit, sed do eiusmod tempor
+                                                                incididunt ut labore et dolore magna aliqua. Ut enim ad
+                                                                minim veniam, quis nostrud exercitation
+                                                                ullamco laboris</p>
+                                                            <p class="mb-0">Duis aute irure dolor in reprehenderit in
+                                                                voluptate velit esse cillum dolore eu
+                                                                fugiat nulla pariatur.</p>
+                                                        </div>
+                                                        <div class="col-md-4 mt-3 pt-2">
+                                                            <div class="view z-depth-1">
+                                                                <img src="https://mdbootstrap.com/img/Photos/Others/nature.jpeg"
+                                                                     alt="" class="img-fluid">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--Accordion wrapper-->
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div class="container-fluid pt-5">
+                    <div class="mb-4">
+                        <button class="btn btn-success ownBtnBorR">
+                            <i class="fas fa-plus"></i>
+                            Создать курс
+                        </button>
+                    </div>
+                    <div class="mb-4">
+                        <!-- Search form -->
+                        <input class="form-control w-25" type="text" placeholder="Поиск" aria-label="Search">
+                    </div>
+                    <div class="mb-4">
+                        <p>
+                            Найдено: <b>3</b>
+                        </p>
+                    </div>
+                    <!--table_2-->
+                    <table class="table table-bordered">
+                        <thead>
+                        <tr>
+                            <th class="font-weight-bold" scope="col">#</th>
+                            <th class="font-weight-bold" scope="col">Превью</th>
+                            <th class="font-weight-bold" scope="col">Название</th>
+                            <th class="font-weight-bold" scope="col">Дата создания</th>
+                            <th class="font-weight-bold" scope="col">Дата изменения</th>
+                            <th class="font-weight-bold" scope="col">Деиствия</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <th class="" scope="row">
+                                3
+                            </th>
+                            <td class="w-25">
+                                <div class="">
+                                    <img src="https://i.pinimg.com/originals/6c/35/ac/6c35ac8444b91490e0780c996de6cab8.jpg"
+                                         alt="" class="img-fluid">
+                                </div>
+                            </td>
+                            <td>
+                                <div>
+                                    <a href="#" class="h6 blue-text">
+                                        Теория бобов. Финансы как
+                                    </a>
+                                    <p>
+                                        Видео демонстрирует принципы <br> создания подпродуктов
+                                    </p>
+                                </div>
+                            </td>
+                            <td>10.08.2020 20:20:21</td>
+                            <td>
+                                <div>
+                                    20.08.2020 20:20:21
+                                </div>
+                            </td>
+                            <td>
+                                <div>
+                                    <button class="btn btn-outline-primary btn-sm ownBtnBorR">Редактировать</button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th class="" scope="row">
+                                <div class="">
+                                    2
+                                </div>
+                            </th>
+                            <td class="w-25">
+                                <div class="">
+                                    <img src="https://i.imgur.com/RRUe0Mo.png" alt="" class="img-fluid">
+                                </div>
+                            </td>
+                            <td>
+                                <div>
+                                    <a href="#" class="h6 blue-text">
+                                        Введение
+                                    </a>
+                                    <p>
+                                        Введение в тестовый курс
+                                    </p>
+                                </div>
+                            </td>
+                            <td>
+                                <div>
+                                    10.08.2020 20:20:21
+                                </div>
+                            </td>
+                            <td>
+                                <div>
+                                    20.08.2020 20:20:21
+                                </div>
+                            </td>
+                            <td>
+                                <div>
+                                    <button class="btn btn-outline-primary ownBtnBorR btn-sm">Редактировать</button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th class="" scope="row">
+                                <div class="w-75">
+                                    1
+                                </div>
+                            </th>
+                            <td class="w-25">
+                                <div class="">
+                                    <img src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg"
+                                         alt="" class="img-fluid">
+                                </div>
+                            </td>
+                            <td>
+                                <div>
+                                    <a href="#" class="h6 blue-text">
+                                        Деньги
+                                    </a>
+                                    <p>
+                                        Деньги, их определения
+                                    </p>
+                                </div>
+                            </td>
+                            <td>
+                                <div>
+                                    10.08.2020 20:20:21
+                                </div>
+                            </td>
+                            <td>
+                                <div>
+                                    20.08.2020 20:20:21
+                                </div>
+                            </td>
+                            <td>
+                                <div>
+                                    <button class="btn btn-outline-primary ownBtnBorR btn-sm">Редактировать</button>
+                                </div>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <!--table_2-->
+                </div>
+                <div class="container-fluid pt-5">
+                    <div class="mb-4">
+                        <button class="btn btn-success ownBtnBorR">
+                            <i class="fas fa-plus"></i>
+                            Создать статью
+                        </button>
+                    </div>
+                    <div class="mb-4">
+                        <!-- Search form -->
+                        <input class="form-control w-25" type="text" placeholder="Поиск" aria-label="Search">
+                    </div>
+                    <div class="mb-4">
+                        <p>
+                            Найдено: <b>4</b>
+                        </p>
+                    </div>
+                    <!--table_2-->
+                    <table class="table table-bordered">
+                        <thead>
+                        <tr>
+                            <th class="font-weight-bold" scope="col">#</th>
+                            <th class="font-weight-bold" scope="col">Название</th>
+                            <th class="font-weight-bold" scope="col">
+                                Дата создания
+                            </th>
+                            <th class="font-weight-bold" scope="col">В курсах</th>
+                            <th class="font-weight-bold" scope="col">удалено</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <th class="" scope="row">
+                                3
+                            </th>
+                            <td>
+                                <div>
+                                    <a href="#" class="h6 blue-text">
+                                        Теория бобов. Финансы как
+                                    </a>
+                                    <p>
+                                        Видео демонстрирует принципы <br> создания подпродуктов
+                                    </p>
+                                </div>
+                            </td>
+                            <td>10.08.2020 20:20:21</td>
+                            <td>
+                                <div>
+                                    <a href="#" class="h6 blue-text">
+                                        Ошляпливание
+                                    </a>
+                                </div>
+                            </td>
+                            <td>
+                                <div>
+                                    <button class="btn btn-outline-danger btn-sm ownBtnBorR">Удалить</button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th class="" scope="row">
+                                <div class="">
+                                    2
+                                </div>
+                            </th>
+                            <td>
+                                <div>
+                                    <a href="#" class="h6 blue-text">
+                                        Введение
+                                    </a>
+                                    <p>
+                                        Введение в тестовый курс
+                                    </p>
+                                </div>
+                            </td>
+                            <td>
+                                <div>
+                                    10.08.2020 20:20:21
+                                </div>
+                            </td>
+                            <td>
+                                <div>
+                                    <a href="#" class="h6 blue-text">
+                                        Тестовый курс
+                                    </a>
+                                </div>
+                            </td>
+                            <td>
+                                <div>
+                                    <button class="btn btn-outline-danger ownBtnBorR btn-sm">Удалить</button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th class="" scope="row">
+                                <div class="w-75">
+                                    1
+                                </div>
+                            </th>
+                            <td>
+                                <div>
+                                    <a href="#" class="h6 blue-text">
+                                        Деньги
+                                    </a>
+                                    <p>
+                                        Деньги, их определения
+                                    </p>
+                                </div>
+                            </td>
+                            <td>
+                                <div>
+                                    10.08.2020 20:20:21
+                                </div>
+                            </td>
+                            <td>
+                                <div>
+                                    <a href="#" class="h6 blue-text">
+                                        Тестовый курс
+                                    </a>
+                                </div>
+                            </td>
+                            <td>
+                                <div>
+                                    <button class="btn btn-outline-danger ownBtnBorR btn-sm">Удалить</button>
+                                </div>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <!--table_2-->
+                </div>
+                <div class="container-fluid pt-5">
+                    <div class="mb-4">
+                        <button class="btn btn-success ownBtnBorR">
+                            <i class="fas fa-plus"></i>
+                            упражнение
+                        </button>
+                    </div>
+                    <div class="mb-4">
+                        <!-- Search form -->
+                        <input class="form-control w-25" type="text" placeholder="Поиск" aria-label="Search">
+                    </div>
+                    <div class="mb-4">
+                        <p>
+                            Найдено: <b>4</b>
+                        </p>
+                    </div>
+                    <!--table_2-->
+                    <table class="table table-bordered">
+                        <thead>
+                        <tr>
+                            <th class="font-weight-bold" scope="col">#</th>
+                            <th class="font-weight-bold" scope="col">Название</th>
+                            <th class="font-weight-bold" scope="col">
+                                <select class="browser-default custom-select">
+                                    <option selected>Все</option>
+                                    <option value="1">В курсах</option>
+                                    <option value="2">Ассоциация</option>
+                                </select>
+                            </th>
+                            <th class="font-weight-bold" scope="col">В курсах</th>
+                            <th class="font-weight-bold" scope="col">удалено</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <th class="" scope="row">
+                                3
+                            </th>
+                            <td>
+                                <div>
+                                    <a href="#" class="h6 blue-text">
+                                        Упражнение к видео
+                                    </a>
+                                    <p>
+                                        Видео демонстрирует принципы <br> создания подпродуктов
+                                    </p>
+                                </div>
+                            </td>
+                            <td>В курсах</td>
+                            <td>
+                                <div>
+                                    <a href="#" class="h6 blue-text">
+                                        Ошляпливание
+                                    </a>
+                                </div>
+                            </td>
+                            <td>
+                                <div>
+                                    <button class="btn btn-outline-danger btn-sm ownBtnBorR">Удалить</button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th class="" scope="row">
+                                <div class="">
+                                    2
+                                </div>
+                            </th>
+                            <td>
+                                <div>
+                                    <a href="#" class="h6 blue-text">
+                                        Упражнение к видео "Подпродукты"
+                                    </a>
+                                    <p>
+                                        Без описания
+                                    </p>
+                                </div>
+                            </td>
+                            <td>
+                                <div>
+                                    Ассоциация
+                                </div>
+                            </td>
+                            <td>
+                                <div>
+                                    <a href="#" class="h6 blue-text">
+                                        Тестовый курс
+                                    </a>
+                                </div>
+                            </td>
+                            <td>
+                                <div>
+                                    <button class="btn btn-outline-danger ownBtnBorR btn-sm">Удалить</button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th class="" scope="row">
+                                <div class="w-75">
+                                    1
+                                </div>
+                            </th>
+                            <td>
+                                <div>
+                                    <a href="#" class="h6 blue-text">
+                                        Упражнение к видео
+                                    </a>
+                                    <p>
+                                        Без описания
+                                    </p>
+                                </div>
+                            </td>
+                            <td>
+                                <div>
+                                    Вопрос
+                                </div>
+                            </td>
+                            <td>
+                                <div>
+                                    <a href="#" class="h6 blue-text">
+                                        Тестовый курс
+                                    </a>
+                                </div>
+                            </td>
+                            <td>
+                                <div>
+                                    <button class="btn btn-outline-danger ownBtnBorR btn-sm">Удалить</button>
+                                </div>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <!--table_2-->
+                </div>
+                <hr>
+                <div class="container-fluid">
+                    <div class="mt-4">
+                        <div class="mb-4">
+                            <button class="btn btn-success ownBtnBorR">
+                                <i class="fas fa-plus"></i>
+                                добавить видео
+                            </button>
+                        </div>
+                        <div class="mb-4">
+                            <!-- Search form -->
+                            <input class="form-control w-25" type="text" placeholder="Поиск" aria-label="Search">
+                        </div>
+                        <div class="mb-4">
+                            <p>
+                                Найдено: <b>4</b>
+                            </p>
+                        </div>
+                        <!--table_1-->
+                        <table class="table table-bordered">
+                            <thead>
+                            <tr>
+                                <th class="font-weight-bold" scope="col">Превью</th>
+                                <th class="font-weight-bold" scope="col">Название</th>
+                                <th class="font-weight-bold" scope="col">В курсах</th>
+                                <th class="font-weight-bold" scope="col">Дата создания</th>
+                                <th class="font-weight-bold" scope="col">Состояние</th>
+                                <th class="font-weight-bold" scope="col">удалено</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <th class="w-25" scope="row">
+                                    <div class="w-75">
+                                        <img src="https://previews.123rf.com/images/tonefotografia/tonefotografia1705/tonefotografia170501485/78282706-beautiful-teacher-woman-holding-book-on-grey-background.jpg"
+                                             alt="" class="img-fluid">
+                                    </div>
+                                </th>
+                                <td>
+                                    <div>
+                                        <a href="#" class="h6 blue-text">
+                                            Подпродукты
+                                        </a>
+                                        <p>
+                                            Видео демонстрирует принципы <br> создания подпродуктов
+                                        </p>
+                                    </div>
+                                </td>
+                                <td>В курсах</td>
+                                <td>
+                                    <div>
+                                        31.02.2020 14:39:45
+                                    </div>
+                                </td>
+                                <td>Завершено</td>
+                                <td>
+                                    <div>
+                                        <button class="btn btn-outline-danger btn-sm ownBtnBorR">Удалить</button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th class="w-25" scope="row">
+                                    <div class="w-75">
+                                        <img src="https://image.freepik.com/free-photo/beautiful-business-woman-smiling-grey-background_33799-159.jpg"
+                                             alt="" class="img-fluid">
+                                    </div>
+                                </th>
+                                <td>
+                                    <div>
+                                        <a href="#" class="h6 blue-text">
+                                            Подпродукты
+                                        </a>
+                                        <p>
+                                            Без описания
+                                        </p>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <a href="#" class="h6 blue-text">
+                                            Тестовый курс, <br> Ошляпливание
+                                        </a>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>
+                                        31.02.2020 14:39:45
+                                    </div>
+                                </td>
+                                <td>Завершено</td>
+                                <td>
+                                    <div>
+                                        <button class="btn btn-outline-danger ownBtnBorR btn-sm">Удалить</button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th class="w-25" scope="row">
+                                    <div class="w-75">
+                                        <img src="https://img.freepik.com/free-photo/executive-business-woman-office_1303-16028.jpg?size=626&ext=jpg"
+                                             alt="" class="img-fluid">
+                                    </div>
+                                </th>
+                                <td>
+                                    <div>
+                                        <a href="#" class="h6 blue-text">
+                                            Подпродукты
+                                        </a>
+                                        <p>
+                                            Без описания
+                                        </p>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <a href="#" class="h6 blue-text">
+                                            Тестовый курс, <br> Ошляпливание
+                                        </a>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>
+                                        31.02.2020 14:39:45
+                                    </div>
+                                </td>
+                                <td>
+                                    Завершено
+                                </td>
+                                <td>
+                                    <div>
+                                        <button class="btn btn-outline-danger ownBtnBorR btn-sm">Удалить</button>
+                                    </div>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <!--table_1-->
+                    </div>
+                </div>
                 <div class="container float-left">
                     <div class="mt-4">
                         <div class="mb-4">
@@ -338,17 +1303,12 @@
                             </select>
                         </div>
                         <div class="mb-4">
-                            <label>Роли</label>
-                            <div class="chips"></div>
-                            <div class="chips chips-initial"></div>
-                            <div class="chips chips-placeholder"></div>
-                            <div class="chips chips-autocomplete"></div>
+
                         </div>
                     </div>
                 </div>
-                <div class="container-fluid"></div>
+                <hr>
             </v-content>
-
             <v-footer app>
                 <span>&copy; 2020</span>
             </v-footer>
@@ -368,8 +1328,18 @@
         src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
 <!-- MDB core JavaScript -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.0/js/mdb.min.js"></script>
+<!--wysiwyg editor-->
+<script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+<!-- Initialize Quill editor -->
+
 <!--mdb-->
 <script>
+    /*wysiwyg editor*/
+    /*https://quilljs.com/*/
+    let quill = new Quill('#editor', {
+        theme: 'snow',
+    });
+    /*vuetify*/
     new Vue({
         el: '#app',
         vuetify: new Vuetify(),
@@ -387,6 +1357,12 @@
             menu: false,
             modal: false,
             menu2: false,
+
+            /*secondDatePickerDate: new Date().toISOString().substr(0.10),
+            secondDatePickerMenu: false,
+            modal: false,
+            secondDatePickerMenu2: false,*/
+
         }),
 
         created() {
