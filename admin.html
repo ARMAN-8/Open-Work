@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:v-slot="http://www.w3.org/1999/XSL/Transform">
+<head>
+    <title>Open Work</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@mdi/font@5.x/css/materialdesignicons.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
+    <!--mdb-->
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.0/css/mdb.min.css" rel="stylesheet">
+    <!--wysiwyg editor-->
+    <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+    <!--mdb-->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="app">
+    <v-app id="inspire">
+        <v-navigation-drawer
+                v-model="drawer"
+                app
+                clipped
+        >
+            <div class="v-list v-sheet v-sheet--tile theme--light v-list--dense">
+                <div tabindex="0" class="v-list-item v-list-item--link theme--light">
+                    <div class="v-list-item__action"><i aria-hidden="true"
+                                                        class="v-icon notranslate mdi mdi-account-group theme--light"></i>
+                    </div>
+                    <div class="v-list-item__content">
+                        <div class="v-list-item__title">
+                            Помощь
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </v-navigation-drawer>
+
+        <v-app-bar
+                app
+                clipped-left
+        >
+            <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
+            <v-toolbar-title>Visotsky</v-toolbar-title>
+            <div class="spacer"></div>
+            <div>
+                <!--<h3 class="text-black-50 ">
+                    Lorem ipsum dolor.
+                </h3>-->
+            </div>
+            <a class="ml-5" data-toggle="dropdown"
+               aria-haspopup="true" aria-expanded="false">
+                <v-avatar color="indigo" v-on="on"
+                          v-bind="attrs">
+                    <v-icon dark>mdi-account-circle</v-icon>
+                </v-avatar>
+                <i class="fas fa-angle-down ml-2 text-black-50"></i>
+            </a>
+
+            <div class="dropdown-menu">
+                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#modal_profile_1"><i
+                        class="fas fa-user"></i> Профиль</a>
+                <a class="dropdown-item" href="#"><i class="fas fa-sign-out-alt"></i> Выход</a>
+            </div>
+        </v-app-bar>
+        <v-content>
+
+
+            <!-- Modal---modal_profile_1-----modal_profile_1_label -->
+            <div class="modal fade" id="modal_profile_1" tabindex="-1" role="dialog"
+                 aria-labelledby="modal_profile_1_label"
+                 aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="modal_profile_1_label">Профиль</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="mb-4">
+                                <div>
+                                    <div class="card p-4">
+                                        <div class="card-body grey-text flex-center"
+                                             style="border: 1px dotted grey; height: 200px;">
+                                            Нажмите что бы добавить аватар
+                                        </div>
+                                    </div>
+                                    <!--<v-app id="inspire">
+                                        &lt;!&ndash;<img src="https://smartlanding.biz/wp-content/uploads/2019/09/stilizaciya-input-s-type-file.png"
+                                             alt="" class="img-fluid">&ndash;&gt;
+                                        <v-file-input
+                                                label="Нажмите что бы добавить аватар"
+                                                filled
+                                                prepend-icon="mdi-camera">
+                                        </v-file-input>
+                                    </v-app>-->
+                                </div>
+                            </div>
+                            <hr/>
+                            <div class="mb-4">
+                                <!-- Default input Name -->
+                                <label for="profileName_1">Имя:</label>
+                                <input type="text" id="profileName_1" class="form-control">
+                            </div>
+                            <div class="mb-4">
+                                <!-- Default input SurName -->
+                                <label for="profileSurname_1">Фамилия:</label>
+                                <input type="text" id="profileSurname_1" class="form-control">
+                            </div>
+                            <div class="mb-4">
+                                <!-- Default input E-Mail -->
+                                <label for="profileE-Mail_1">E-Mail:</label>
+                                <input type="text" id="profileE-Mail_1" class="form-control">
+                            </div>
+                            <div class="mb-4">
+                                <!-- Default input PhoneNumber -->
+                                <label for="profilePhoneNumber_1">Телефон:</label>
+                                <input type="number" id="profilePhoneNumber_1" class="form-control">
+                            </div>
+                            <div class="mb-4">
+                                <!-- Default input Password -->
+                                <label for="profilePassword_1">Пароль</label>
+                                <input type="password" id="profilePassword_1" class="form-control">
+                            </div>
+                            <div class="mb-4">
+                                <!-- Default input Location -->
+                                <label for="profileLocation_1">Местоположение:</label>
+                                <input type="number" id="profileLocation_1" class="form-control">
+                            </div>
+                            <div class="mb-4">
+                                <select class="browser-default custom-select">
+                                    <option value="1">Мужской</option>
+                                    <option value="2">Женский</option>
+                                </select>
+                            </div>
+                            <div class="mb-4">
+                                <!--Maybe-Wrong-Code-->
+                                <v-menu
+                                        ref="secondDatePickerMenu"
+                                        v-model="secondDatePickerMenu"
+                                        :close-on-content-click="false"
+                                        :return-value.sync="secondDatePickerDate"
+                                        transition="scale-transition"
+                                        offset-y
+                                        min-width="290px"
+                                >
+                                    <template v-slot:activator="{ on, attrs }">
+                                        <v-text-field
+                                                v-model="secondDatePickerDate"
+                                                label="Дата рождения"
+                                                readonly
+                                                v-bind="attrs"
+                                                v-on="on"
+                                        ></v-text-field>
+                                    </template>
+                                    <v-date-picker v-model="date" no-title scrollable>
+                                        <v-spacer></v-spacer>
+                                        <v-btn text color="primary" @click="secondDatePickerMenu = false">Отменить
+                                        </v-btn>
+                                        <v-btn text color="primary"
+                                               @click="$refs.secondDatePickerMenu.save(secondDatePickerDate)">OK
+                                        </v-btn>
+                                    </v-date-picker>
+                                </v-menu>
+                                <!--/Maybe-Wrong-Code-->
+                            </div>
+                            <div class="mb-4">
+                                <div class="custom-control custom-checkbox float-left">
+                                    <input type="checkbox" class="custom-control-input" id="modalCheckbox_1">
+                                    <label class="custom-control-label" for="modalCheckbox_1">Получать
+                                        e-mail</label>
+                                </div>
+                                <div class="custom-control custom-checkbox float-right">
+                                    <input type="checkbox" class="custom-control-input" id="modalCheckbox_2">
+                                    <label class="custom-control-label" for="modalCheckbox_2">Получать sms</label>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger ownBtnBorR" data-dismiss="modal">Закрыть
+                            </button>
+                            <button type="button" class="btn btn-success ownBtnBorR">Сохранить</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center">
+                <span class="badge badge-primary p-2">
+                    <a href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i
+                            class="fas fa-bell white-text"></i></a>
+                    <div class="dropdown-menu">
+                        <div class="">
+                        <div class="card-body">
+                            <ul class="nav nav-tabs" id="myBellTabs" role="tablist">
+                                <li class="nav-item">
+                                    <a class="nav-link active" id="notifications-tab" data-toggle="tab"
+                                       href="#notifications" role="tab" aria-controls="notifications"
+                                       aria-selected="true">
+                                        Уведомления
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" id="history-tab" data-toggle="tab" href="#history" role="tab"
+                                       aria-controls="history"
+                                       aria-selected="false">
+                                        История
+                                    </a>
+                                </li>
+                            </ul>
+                            <div class="tab-content" id="myBellTabsContent">
+                                <div class="tab-pane fade show active" id="notifications" role="tabpanel"
+                                     aria-labelledby="notifications-tab">
+                                    <div class="mt-2">
+                                        Ничего не найдено
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="history" role="tabpanel" aria-labelledby="history-tab">
+                                    <div class="mt-2">
+                                        Ничего не найдено
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                </span>
+
+                <span class="badge badge-warning p-2" data-toggle="tooltip" title="Количество дней до конца лицензии"
+                      data-placement="bottom">
+                    <a href="#" class="white-text">
+                        <i class="fas fa-clock pr-1"></i>
+                       13 дней
+                    </a>
+                </span>
+            </div>
+            <div class="container-fluid pt-5">
+                <div class="mt-5">
+                    <div class="mb-4">
+                        <div class="card mb-5">
+                            <div class="card-body">
+                                <div class="text-center">
+                                    Курсы
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card mb-5">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-xs-12 col-md-6 col-lg-3 align-self-end">
+                                        <!--form-control-->
+                                        <div>
+                                            <label for="exampleForm2">Поиск</label>
+                                            <input type="text" id="exampleForm2" class="form-control">
+                                        </div>
+                                        <!--/form-control-->
+                                    </div>
+                                    <div class="col-xs-12 col-md-6 col-lg-3">
+                                        <label>Категория</label>
+                                        <select class="browser-default custom-select">
+                                            <option selected>Все</option>
+                                            <option value="1">МОДУЛЬ №11</option>
+                                            <option value="2">МОДУЛЬ №2 (online)</option>
+                                            <option value="3">МОДУЛЬ №10</option>
+                                            <option value="4">МОДУЛЬ №9</option>
+                                            <option value="5">МОДУЛЬ №8</option>
+                                            <option value="6">МОДУЛЬ №7</option>
+                                            <option value="7">МОДУЛЬ №6</option>
+                                            <option value="8">МОДУЛЬ №5</option>
+                                            <option value="9">МОДУЛЬ №4</option>
+                                            <option value="10">МОДУЛЬ №3</option>
+                                            <option value="11">МОДУЛЬ №2</option>
+                                            <option value="12">МОДУЛЬ №1</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-xs-12 col-md-6 col-lg-3">
+                                        <label>Тип</label>
+                                        <select class="browser-default custom-select">
+                                            <option selected>Все</option>
+                                            <option value="1">Онлайн</option>
+                                            <option value="2">Офлайн</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-xs-12 col-md-6 col-lg-3">
+                                        <label>Завершенность</label>
+                                        <select class="browser-default custom-select">
+                                            <option value="1">Завершен</option>
+                                            <option value="2">Не завершен</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr style="border: 1px dashed #ebedf2;"/>
+                    <div>
+                        <p>Найдено: <b class="font-weight-bold">0</b></p>
+                    </div>
+                    <div>
+                        <p>
+                            В данный момент вам не назначено ни одного курса. Чтобы добавить курс свяжитесь с ответственным за обучение или напишите в
+                            <a href="#">техническую поддержку</a>
+                        </p>
+                    </div>
+                    <div>
+                        <p>Найдено: <b class="font-weight-bold">0</b></p>
+                    </div>
+
+
+
+                </div>
+                <!--treeView-->
+                <a href="https://jsfiddle.net/KyleMit/LczLqsoa/" target="_blank">TreeView JsFiddle</a>
+                <!--treeView-->
+                <div class="treeview w-20 border">
+                    <ul class="mb-1 pl-3 pb-2">
+                        <li><i class="fas fa-angle-right rotate"></i>
+                            <span><i class="far fa-envelope-open ic-w mx-1"></i>Mail</span>
+                            <ul class="nested">
+                                <li><i class="far fa-bell ic-w mr-1"></i>Offers</li>
+                                <li><i class="far fa-address-book ic-w mr-1"></i>Contacts</li>
+                                <li><i class="fas fa-angle-right rotate"></i>
+                                    <span><i class="far fa-calendar-alt ic-w mx-1"></i>Calendar</span>
+                                    <ul class="nested">
+                                        <li><i class="far fa-clock ic-w mr-1"></i>Deadlines</li>
+                                        <li><i class="fas fa-users ic-w mr-1"></i>Meetings</li>
+                                        <li><i class="fas fa-basketball-ball ic-w mr-1"></i>Workouts</li>
+                                        <li><i class="fas fa-mug-hot ic-w mr-1"></i>Events</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li><i class="fas fa-angle-right rotate"></i>
+                            <span><i class="far fa-folder-open ic-w mx-1"></i>Inbox</span>
+                            <ul class="nested">
+                                <li><i class="far fa-folder-open ic-w mr-1"></i>Admin</li>
+                                <li><i class="far fa-folder-open ic-w mr-1"></i>Corporate</li>
+                                <li><i class="far fa-folder-open ic-w mr-1"></i>Finance</li>
+                                <li><i class="far fa-folder-open ic-w mr-1"></i>Other</li>
+                            </ul>
+                        </li>
+                        <li><i class="fas fa-angle-right rotate"></i>
+                            <span><i class="far fa-gem ic-w mx-1"></i>Favourites</span>
+                            <ul class="nested">
+                                <li><i class="fas fa-pepper-hot ic-w mr-1"></i>Restaurants</li>
+                                <li><i class="far fa-eye ic-w mr-1"></i>Places</li>
+                                <li><i class="fas fa-gamepad ic-w mr-1"></i>Games</li>
+                                <li><i class="fas fa-cocktail ic-w mr-1"></i>Coctails</li>
+                                <li><i class="fas fa-pizza-slice ic-w mr-1"></i>Food</li>
+                            </ul>
+                        </li>
+                        <li><i class="far fa-comment ic-w mr-1"></i>Notes</li>
+                        <li><i class="fas fa-cogs ic-w mr-1"></i>Settings</li>
+                        <li><i class="fas fa-desktop ic-w mr-1"></i>Devices</li>
+                        <li><i class="fas fa-trash-alt ic-w mr-1"></i>Deleted Items</li>
+                    </ul>
+                </div>
+            </div>
+        </v-content>
+        <v-footer app>
+            <span>&copy; 2020</span>
+        </v-footer>
+    </v-app>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
+<!--mdb-->
+<!-- JQuery -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<!-- Bootstrap tooltips -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+<!-- Bootstrap core JavaScript -->
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+<!-- MDB core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.0/js/mdb.min.js"></script>
+<!--wysiwyg editor-->
+<script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+<!-- Initialize Quill editor -->
+
+<!--mdb-->
+<script>
+    // Tooltips Initialization
+    $(function () {
+        $('[data-toggle="tooltip"]').tooltip()
+    });
+    // Treeview Initialization
+    $(document).ready(function() {
+        $('.treeview').mdbTreeview();
+    });
+    /*wysiwyg editor*/
+    /*https://quilljs.com/*/
+    let quill = new Quill('#editor', {
+        theme: 'snow',
+    });
+    /*vuetify*/
+    new Vue({
+        el: '#app',
+        vuetify: new Vuetify(),
+        props: {
+            source: String,
+        },
+
+        data: () => ({
+            drawer: null,
+            items: [
+                {title: 'Профиль'},
+                {title: 'Выход'},
+            ],
+            date: new Date().toISOString().substr(0, 10),
+            menu: false,
+            modal: false,
+            menu2: false,
+
+            /*secondDatePickerDate: new Date().toISOString().substr(0.10),
+            secondDatePickerMenu: false,
+            modal: false,
+            secondDatePickerMenu2: false,*/
+
+        }),
+
+        created() {
+            this.$vuetify.theme.light = true
+        },
+    });
+    $('.chips-initial').form_chip('data');
+    var chip = {
+        tag: 'chip content',
+        image: '', //optional
+        id: 1, //optional
+    };
+</script>
+</body>
+</html>

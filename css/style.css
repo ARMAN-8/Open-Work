@@ -35,3 +35,35 @@ body, html {
 .secondAccordionBG{
     background-color: #eeffed;
 }
+.allTitles{
+    font-weight: bold;
+    font-size: 18px;
+}
+.allSubTitles{
+    font-weight: normal;
+    font-size: 15px;
+}
+.pinkBg{
+    background-color: #ffd9dd;
+}
+.borRadius20{
+    border-radius: 20px;
+}
+.underImageIcons{
+    border-radius: 50%;
+    border: 1px solid transparent;
+    background: #1e8afc;
+    color: #ffffff;
+    padding: 5px;
+}
+.underImageIcons:hover{
+    background: #50db30;
+    color: #ffffff;
+}
+.underTransparentDivIcons{
+    border-radius: 50%;
+    border: 1px solid transparent;
+    background: #ffffff;
+    padding: 5px;
+    margin-right: 20px;
+}

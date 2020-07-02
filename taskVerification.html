@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:v-slot="http://www.w3.org/1999/XSL/Transform">
+<head>
+    <title>Open Work</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@mdi/font@5.x/css/materialdesignicons.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
+    <!--mdb-->
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.0/css/mdb.min.css" rel="stylesheet">
+    <!--wysiwyg editor-->
+    <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+    <!--mdb-->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="app">
+    <v-app id="inspire">
+        <v-app id="inspire">
+            <v-navigation-drawer
+                    v-model="drawer"
+                    app
+                    clipped
+            >
+                <div class="v-list v-sheet v-sheet--tile theme--light v-list--dense">
+                    <div tabindex="0" class="v-list-item v-list-item--link theme--light">
+                        <div class="v-list-item__action"><i aria-hidden="true"
+                                                            class="v-icon notranslate mdi mdi-account-group theme--light"></i>
+                        </div>
+                        <div class="v-list-item__content">
+                            <div class="v-list-item__title">
+                                Пользователи
+                            </div>
+                        </div>
+                    </div>
+                    <div tabindex="0" class="v-list-item v-list-item--link theme--light">
+                        <div class="v-list-item__action"><i aria-hidden="true"
+                                                            class="v-icon notranslate mdi mdi-office-building theme--light"></i>
+                        </div>
+                        <div class="v-list-item__content">
+                            <div class="v-list-item__title">
+                                Компании
+                            </div>
+                        </div>
+                    </div>
+                    <div tabindex="0" class="v-list-item v-list-item--link theme--light">
+                        <div class="v-list-item__action"><i aria-hidden="true"
+                                                            class="v-icon notranslate mdi mdi-server theme--light"></i>
+                        </div>
+                        <div class="v-list-item__content">
+                            <div class="v-list-item__title">
+                                Прогресс
+                            </div>
+                        </div>
+                    </div>
+                    <div class="v-list-group">
+                        <div tabindex="0" aria-expanded="false" role="button"
+                             class="v-list-group__header v-list-item v-list-item--link theme--light">
+                            <div class="v-list-item__icon v-list-group__header__prepend-icon"><i aria-hidden="true"
+                                                                                                 class="v-icon notranslate mdi mdi-file-video-outline theme--light"></i>
+                            </div>
+                            <div class="v-list-item__content">
+                                <div class="v-list-item__title" data-toggle="collapse" href="#sideNavCollapse1"
+                                     aria-expanded="false" aria-controls="sideNavCollapse1">
+                                    Контент
+                                    <i class="fas fa-angle-down float-right rotate"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Collapsible element -->
+                        <div class="collapse" id="sideNavCollapse1">
+                            <ul class="ml-5 text-black-50">
+                                <li class="m-3 w-100"><a href="#" class="text-black-50">Видео</a></li>
+                                <li class="m-3"><a href="#" class="text-black-50">Упражнения</a></li>
+                                <li class="m-3"><a href="#" class="text-black-50">Письменные <br> Упражнения</a></li>
+                                <li class="m-3"><a href="#" class="text-black-50">ЧВД упражнения</a></li>
+                                <li class="m-3"><a href="#" class="text-black-50">Курсы</a></li>
+                                <li class="m-3"><a href="#" class="text-black-50">Куросовые статьи</a></li>
+                                <li class="m-3"><a href="#" class="text-black-50">Страницы</a></li>
+                                <li class="m-3"><a href="#" class="text-black-50">Глоссарии</a></li>
+                            </ul>
+                        </div>
+                        <!-- / Collapsible element -->
+                        <div class="v-list-group__items" style="display: none;">
+                            <div class="v-list-item v-list-item--link theme--light">class</div>
+                            <div tabindex="0" class="v-list-item v-list-item--link theme--light">
+                                <div class="v-list-item__action">
+                                    <i aria-hidden="true" class="v-icon notranslate mdi mdi-plus theme--light"></i>
+                                </div>
+                                <div class="v-list-item__content">
+                                    <div class="v-list-item__title">
+                                        Классные комнаты
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="v-list-group">
+                        <div tabindex="0" aria-expanded="false" role="button"
+                             class="v-list-group__header v-list-item v-list-item--link theme--light">
+                            <div class="v-list-item__icon v-list-group__header__prepend-icon"><i aria-hidden="true"
+                                                                                                 class="v-icon notranslate mdi mdi-history theme--light"></i>
+                            </div>
+                            <div class="v-list-item__content">
+                                <div class="v-list-item__title">
+                                    История
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="v-list-group">
+                            <div tabindex="0" aria-expanded="false"
+                                 class="v-list-group__header v-list-item theme--light">
+                                <div class="v-list-item__content">
+                                    <div class="v-list-item__title" disabled="">
+                                        Класс
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="v-list-group__items" style="display: none;">
+                            <div tabindex="0" class="v-list-item v-list-item--link theme--light"><!---->
+                                <div class="v-list-item__content">
+                                    <div class="v-list-item__title">
+                                        Lorem.
+                                    </div>
+                                </div>
+                            </div>
+                            <div tabindex="0" class="v-list-item v-list-item--link theme--light"><!---->
+                                <div class="v-list-item__content">
+                                    <div class="v-list-item__title">
+                                        Lorem ipsum.
+                                    </div>
+                                </div>
+                            </div>
+                            <div tabindex="0" class="v-list-item v-list-item--link theme--light"><!---->
+                                <div class="v-list-item__content">
+                                    <div class="v-list-item__title">
+                                        Lorem ipsum dolor.
+                                    </div>
+                                </div>
+                            </div>
+                            <div tabindex="0" class="v-list-item v-list-item--link theme--light"><!---->
+                                <div class="v-list-item__content">
+                                    <div class="v-list-item__title">
+                                        Lorem ipsum dolor sit.
+                                    </div>
+                                </div>
+                            </div>
+                            <div tabindex="0" class="v-list-item v-list-item--link theme--light"><!---->
+                                <div class="v-list-item__content">
+                                    <div class="v-list-item__title">
+                                        Lorem ipsum dolor sit amet.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div tabindex="0" class="v-list-item v-list-item--link theme--light">
+                        <div class="v-list-item__action"><i aria-hidden="true"
+                                                            class="v-icon notranslate mdi mdi-check-box-outline theme--light"></i>
+                        </div>
+                        <div class="v-list-item__content">
+                            <div class="v-list-item__title">
+                                Проверка заданий
+                            </div>
+                        </div>
+                    </div>
+                    <div tabindex="0" class="v-list-item v-list-item--link theme--light">
+                        <div class="v-list-item__action"><i aria-hidden="true"
+                                                            class="v-icon notranslate mdi mdi-nodejs theme--light"></i>
+                        </div>
+                        <div class="v-list-item__content">
+                            <div class="v-list-item__title">
+                                Node Js
+                            </div>
+                        </div>
+                    </div>
+                    <div tabindex="0" class="v-list-item v-list-item--link theme--light">
+                        <div class="v-list-item__action"><i aria-hidden="true"
+                                                            class="v-icon notranslate mdi mdi-heart-pulse theme--light"></i>
+                        </div>
+                        <div class="v-list-item__content">
+                            <div class="v-list-item__title">
+                                Обновления
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="v-list-group">
+                        <div tabindex="0" aria-expanded="false"
+                             class="v-list-group__header v-list-item theme--light">
+                            <div class="v-list-item__content">
+                                <div class="v-list-item__title" disabled="">
+                                    Оповещения
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div tabindex="0" class="v-list-item v-list-item--link theme--light">
+                        <div class="v-list-item__action"><i aria-hidden="true"
+                                                            class="v-icon notranslate mdi mdi-comment theme--light"></i>
+                        </div>
+                        <div class="v-list-item__content">
+                            <div class="v-list-item__title">
+                                Оповещения
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="v-list-group">
+                        <div tabindex="0" aria-expanded="false"
+                             class="v-list-group__header v-list-item theme--light">
+                            <div class="v-list-item__content">
+                                <div class="v-list-item__title" disabled="">
+                                    Аккаунт
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div tabindex="0" class="v-list-item v-list-item--link theme--light">
+                        <div class="v-list-item__action"><i aria-hidden="true"
+                                                            class="v-icon notranslate mdi mdi-cog theme--light"></i>
+                        </div>
+                        <div class="v-list-item__content">
+                            <div class="v-list-item__title">
+                                Настройки
+                            </div>
+                        </div>
+                    </div>
+                    <div tabindex="0" class="v-list-item v-list-item--link theme--light">
+                        <div class="v-list-item__action"><i aria-hidden="true"
+                                                            class="v-icon notranslate mdi mdi-credit-card theme--light"></i>
+                        </div>
+                        <div class="v-list-item__content">
+                            <div class="v-list-item__title">
+                                Платежи
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </v-navigation-drawer>
+
+            <v-app-bar
+                    app
+                    clipped-left
+            >
+                <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
+                <v-toolbar-title>ATMOnline</v-toolbar-title>
+                <div class="spacer"></div>
+                <div>
+                    <h3 class="text-black-50 ">
+                        Lorem ipsum dolor.
+                    </h3>
+                </div>
+                <div class="spacer"></div>
+                <div class="mr-5">
+                    <a href="#" class="font-weight-bolder text green-text">
+                        <i class="far fa-clock"></i>
+                        2684 дня
+                    </a>
+                </div>
+                <a class="ml-5" data-toggle="dropdown"
+                   aria-haspopup="true" aria-expanded="false">
+                    <v-avatar color="indigo" v-on="on"
+                              v-bind="attrs">
+                        <v-icon dark>mdi-account-circle</v-icon>
+                    </v-avatar>
+                    pavel petrov
+                    <i class="fas fa-angle-down ml-2 text-black-50"></i>
+                </a>
+
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#modal_profile_1"><i
+                            class="fas fa-user"></i> Профиль</a>
+                    <a class="dropdown-item" href="#"><i class="fas fa-sign-out-alt"></i> Выход</a>
+                </div>
+            </v-app-bar>
+            <v-content>
+                <!-- Modal---modal_profile_1-----modal_profile_1_label -->
+                <div class="modal fade" id="modal_profile_1" tabindex="-1" role="dialog"
+                     aria-labelledby="modal_profile_1_label"
+                     aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="modal_profile_1_label">Профиль</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="mb-4">
+                                    <div>
+                                        <div class="card p-4">
+                                            <div class="card-body grey-text flex-center"
+                                                 style="border: 1px dotted grey; height: 200px;">
+                                                Нажмите что бы добавить аватар
+                                            </div>
+                                        </div>
+                                        <!--<v-app id="inspire">
+                                            &lt;!&ndash;<img src="https://smartlanding.biz/wp-content/uploads/2019/09/stilizaciya-input-s-type-file.png"
+                                                 alt="" class="img-fluid">&ndash;&gt;
+                                            <v-file-input
+                                                    label="Нажмите что бы добавить аватар"
+                                                    filled
+                                                    prepend-icon="mdi-camera">
+                                            </v-file-input>
+                                        </v-app>-->
+                                    </div>
+                                </div>
+                                <hr/>
+                                <div class="mb-4">
+                                    <!-- Default input Name -->
+                                    <label for="profileName_1">Имя:</label>
+                                    <input type="text" id="profileName_1" class="form-control">
+                                </div>
+                                <div class="mb-4">
+                                    <!-- Default input SurName -->
+                                    <label for="profileSurname_1">Фамилия:</label>
+                                    <input type="text" id="profileSurname_1" class="form-control">
+                                </div>
+                                <div class="mb-4">
+                                    <!-- Default input E-Mail -->
+                                    <label for="profileE-Mail_1">E-Mail:</label>
+                                    <input type="text" id="profileE-Mail_1" class="form-control">
+                                </div>
+                                <div class="mb-4">
+                                    <!-- Default input PhoneNumber -->
+                                    <label for="profilePhoneNumber_1">Телефон:</label>
+                                    <input type="number" id="profilePhoneNumber_1" class="form-control">
+                                </div>
+                                <div class="mb-4">
+                                    <!-- Default input Password -->
+                                    <label for="profilePassword_1">Пароль</label>
+                                    <input type="password" id="profilePassword_1" class="form-control">
+                                </div>
+                                <div class="mb-4">
+                                    <!-- Default input Location -->
+                                    <label for="profileLocation_1">Местоположение:</label>
+                                    <input type="number" id="profileLocation_1" class="form-control">
+                                </div>
+                                <div class="mb-4">
+                                    <select class="browser-default custom-select">
+                                        <option value="1">Мужской</option>
+                                        <option value="2">Женский</option>
+                                    </select>
+                                </div>
+                                <div class="mb-4">
+                                    <!--Maybe-Wrong-Code-->
+                                    <v-menu
+                                            ref="secondDatePickerMenu"
+                                            v-model="secondDatePickerMenu"
+                                            :close-on-content-click="false"
+                                            :return-value.sync="secondDatePickerDate"
+                                            transition="scale-transition"
+                                            offset-y
+                                            min-width="290px"
+                                    >
+                                        <template v-slot:activator="{ on, attrs }">
+                                            <v-text-field
+                                                    v-model="secondDatePickerDate"
+                                                    label="Дата рождения"
+                                                    readonly
+                                                    v-bind="attrs"
+                                                    v-on="on"
+                                            ></v-text-field>
+                                        </template>
+                                        <v-date-picker v-model="date" no-title scrollable>
+                                            <v-spacer></v-spacer>
+                                            <v-btn text color="primary" @click="secondDatePickerMenu = false">Отменить
+                                            </v-btn>
+                                            <v-btn text color="primary"
+                                                   @click="$refs.secondDatePickerMenu.save(secondDatePickerDate)">OK
+                                            </v-btn>
+                                        </v-date-picker>
+                                    </v-menu>
+                                    <!--/Maybe-Wrong-Code-->
+                                </div>
+                                <div class="mb-4">
+                                    <div class="custom-control custom-checkbox float-left">
+                                        <input type="checkbox" class="custom-control-input" id="modalCheckbox_1">
+                                        <label class="custom-control-label" for="modalCheckbox_1">Получать
+                                            e-mail</label>
+                                    </div>
+                                    <div class="custom-control custom-checkbox float-right">
+                                        <input type="checkbox" class="custom-control-input" id="modalCheckbox_2">
+                                        <label class="custom-control-label" for="modalCheckbox_2">Получать sms</label>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-danger ownBtnBorR" data-dismiss="modal">Закрыть
+                                </button>
+                                <button type="button" class="btn btn-success ownBtnBorR">Сохранить</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container-fluid mt-4 mb-4">
+                    <div class="row">
+                        <div class="col-lg-3 col-md-3 col-sm-12">
+                            <div class="mb-4">
+                                <label>Пользователь</label>
+                                <select class="browser-default custom-select">
+                                    <option selected>Ничего не выбрано</option>
+                                    <option value="1">lorem ispum</option>
+                                    <option value="2">Dolor sit amet</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-12">
+                            <div class="mb-4">
+                                <label>Курс</label>
+                                <select class="browser-default custom-select">
+                                    <option selected>Ничего не выбрано</option>
+                                    <option value="1">lorem ispum</option>
+                                    <option value="2">Dolor sit amet</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-12">
+                            <div class="mb-4">
+                                <label>Компания</label>
+                                <select class="browser-default custom-select">
+                                    <option selected>Ничего не выбрано</option>
+                                    <option value="1">lorem ispum</option>
+                                    <option value="2">Dolor sit amet</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-12">
+                            <!-- Default checked -->
+                            <div class="custom-control custom-checkbox pt-5 mt-5">
+                                <input type="checkbox" class="custom-control-input" id="companiesWithActiveLicense"
+                                       checked>
+                                <label class="custom-control-label" for="companiesWithActiveLicense">Компании с активной
+                                    лицензией</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="allTitles">Скрыто упражнений, из за нахождения пользователя в классе: 0</div>
+                        <p>Найдено: <b>1</b></p>
+                        <div class="pinkBg mx-5 ownBtnBorR">
+                            <div class="p-3">
+                                <div class="row">
+                                    <div class="col-lg-9 col-md-9 col-sm-9">
+                                        <p>Что такое деньги?</p>
+                                        <hr>
+                                    </div>
+                                    <div class="col-lg-3 col-md-3 col-sm-3">
+                                        <div class="text-center">
+                                            <p class="text-black-50">Проверка</p>
+                                            <!--<i class="fas fa-arrows-alt-h grey-text"></i>-->
+                                            <div class="h4">
+                                                <span class="badge badge-light borRadius20 ">
+                                                    <a href="#" class="mr-2"><i class="far fa-thumbs-up grey-text"></i></a>
+                                                    <a href="#"><i class="fas fa-circle white-text"></i></a>
+                                                    <a href="#" class="ml-2">
+                                                        <i class="far fa-thumbs-down grey-text"></i>
+                                                    </a>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="text-black-50">
+                                    Правильный ответ:
+                                    <br>
+                                    LOREM - Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ipsum molestiae
+                                    odio sequi. Accusamus aliquam
+                                    <br> culpa deleniti deserunt doloremque dolores odit, optio quis reiciendis repellat
+                                    repudiandae, rerum totam unde ut.
+                                </div>
+                                <hr>
+                                <div class="pb-4">
+                                    <div class="allSubTitles">Валерий Ходорцов
+                                        <div class="float-right">28.05.2020 02:35:56</div>
+                                        <p>sds</p>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleFormControlTextarea1"></label>
+                                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
+                                                  placeholder="Комментарий к проверке (не обязательно)..."></textarea>
+                                        <div class="float-right">
+                                            <button class="btn btn-primary btn-sm ownBtnBorR">отправить</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-0 text-center">
+                            <button class="btn btn-success ownBtnBorR btn-sm">Проверено</button>
+                            <!--<h5><div class="badge badge-success">Проверено</div></h5>-->
+                        </div>
+                        <p>Найдено: <b>1</b></p>
+                    </div>
+                </div>
+
+            </v-content>
+            <v-footer app>
+                <span>&copy; 2020</span>
+            </v-footer>
+        </v-app>
+    </v-app>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
+<!--mdb-->
+<!-- JQuery -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<!-- Bootstrap tooltips -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+<!-- Bootstrap core JavaScript -->
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+<!-- MDB core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.0/js/mdb.min.js"></script>
+<!--wysiwyg editor-->
+<script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+<!-- Initialize Quill editor -->
+
+<!--mdb-->
+<script>
+    /*wysiwyg editor*/
+    /*https://quilljs.com/*/
+    let quill = new Quill('#editor', {
+        theme: 'snow',
+    });
+    /*vuetify*/
+    new Vue({
+        el: '#app',
+        vuetify: new Vuetify(),
+        props: {
+            source: String,
+        },
+
+        data: () => ({
+            drawer: null,
+            items: [
+                {title: 'Профиль'},
+                {title: 'Выход'},
+            ],
+            date: new Date().toISOString().substr(0, 10),
+            menu: false,
+            modal: false,
+            menu2: false,
+
+            /*secondDatePickerDate: new Date().toISOString().substr(0.10),
+            secondDatePickerMenu: false,
+            modal: false,
+            secondDatePickerMenu2: false,*/
+
+        }),
+
+        created() {
+            this.$vuetify.theme.light = true
+        },
+    });
+    $('.chips-initial').form_chip('data');
+    var chip = {
+        tag: 'chip content',
+        image: '', //optional
+        id: 1, //optional
+    };
+</script>
+</body>
+</html>
